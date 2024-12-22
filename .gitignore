@@ -1,4 +1,3 @@
-
 .anchor
 .DS_Store
 target
@@ -8,4 +7,4 @@ test-ledger
 .vscode
 .yarn
 Makefile
-
+.idea
