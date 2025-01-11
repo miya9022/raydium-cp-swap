@@ -314,7 +314,7 @@ pub fn initialize(
     }
 
     pool_state.initialize(
-        ctx.bumps.authority,
+        ctx.bumps["authority"],
         liquidity,
         open_time,
         ctx.accounts.creator.key(),
