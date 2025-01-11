@@ -190,7 +190,7 @@ pub fn initialize(
             POOL_VAULT_SEED.as_bytes(),
             ctx.accounts.pool_state.key().as_ref(),
             ctx.accounts.token_0_mint.key().as_ref(),
-            &[ctx.bumps.token_0_vault][..],
+            &[ctx.bumps["token_0_vault"]][..],
         ][..]],
     )?;
 
@@ -205,7 +205,7 @@ pub fn initialize(
             POOL_VAULT_SEED.as_bytes(),
             ctx.accounts.pool_state.key().as_ref(),
             ctx.accounts.token_1_mint.key().as_ref(),
-            &[ctx.bumps.token_1_vault][..],
+            &[ctx.bumps["token_1_vault"]][..],
         ][..]],
     )?;
 
@@ -284,7 +284,7 @@ pub fn initialize(
         liquidity
             .checked_sub(lock_lp_amount)
             .ok_or(ErrorCode::InitLpAmountTooLess)?,
-        &[&[crate::AUTH_SEED.as_bytes(), &[ctx.bumps.authority]]],
+        &[&[crate::AUTH_SEED.as_bytes(), &[ctx.bumps["authority"]]]],
     )?;
 
     // Charge the fee to create a pool

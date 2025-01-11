@@ -39,7 +39,7 @@ pub fn create_amm_config(
 ) -> Result<()> {
     let amm_config = ctx.accounts.amm_config.deref_mut();
     amm_config.protocol_owner = ctx.accounts.owner.key();
-    amm_config.bump = ctx.bumps.amm_config;
+    amm_config.bump = ctx.bumps["amm_config"];
     amm_config.disable_create_pool = false;
     amm_config.index = index;
     amm_config.trade_fee_rate = trade_fee_rate;
